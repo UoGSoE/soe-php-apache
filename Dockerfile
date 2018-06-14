@@ -1,4 +1,4 @@
-FROM uogsoe/soe-php-apache:7.2
+FROM uogsoe/soe-php-apache:7.1
 
 RUN pecl install xdebug-2.6.0
 RUN docker-php-ext-enable xdebug
