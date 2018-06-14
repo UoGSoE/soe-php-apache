@@ -10,8 +10,12 @@ Eg:
 ```
 // for php7.1
 docker pull uogsoe/soe-php-apache:7.1
+// for php7.1 + xdebug + composer + prestissimo
+docker pull uogsoe/soe-php-apache:7.1-ci
 
 // for php7.2
 docker pull uogsoe/soe-php-apache:7.2
+// for php7.2 + xdebug + composer + prestissimo
+docker pull uogsoe/soe-php-apache:7.2-ci
 ```
 
