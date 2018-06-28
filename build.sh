@@ -2,11 +2,18 @@
 
 set -e
 
-BASE_IMAGE_NAME="uogsoe/soe-php-apache"
-CURRENT_BRANCH=`git rev-parse --abbrev-ref HEAD | sed -e 's/.*\///g'`
-FULL_NAME="${BASE_IMAGE_NAME}:${CURRENT_BRANCH}"
+BASE_NAME="uogsoe/soe-php-apache"
+VERSIONS=( "7.1" "7.2" "7.1-ci" "7.2-ci" )
 
-echo "Building ${FULL_NAME}"
-docker build . -t "${FULL_NAME}"
-docker push "${FULL_NAME}"
-
+for VERSION in "${VERSIONS[@]}";
+do
+    FILENAME=Dockerfile.${VERSION}
+    if [ ! -f $FILENAME ];
+    then
+        echo "No such file $FILENAME"
+        exit 1
+    fi
+    echo "Building ${VERSION}..."
+    docker build -t "${BASE_NAME}":"${VERSION}" -f "${FILENAME}" .
+    docker push "${BASE_NAME}":"${VERSION}"
+done
