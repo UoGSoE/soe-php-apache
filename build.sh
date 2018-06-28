@@ -3,7 +3,7 @@
 set -e
 
 BASE_NAME="uogsoe/soe-php-apache"
-VERSIONS=( "7.1" "7.2" "7.1-ci" "7.2-ci" )
+VERSIONS=( "7.1" "7.2" "7.1-ci" "7.2-ci" "latest")
 
 for VERSION in "${VERSIONS[@]}";
 do
