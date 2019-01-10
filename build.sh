@@ -3,7 +3,7 @@
 set -e
 
 BASE_NAME="uogsoe/soe-php-apache"
-VERSIONS=( "7.1" "7.2" "7.1-ci" "7.2-ci" "latest")
+VERSIONS=( "7.1" "7.2" "7.3" "7.1-ci" "7.2-ci" "7.3-ci" "latest")
 
 PNAME=`basename $0`
 LOGFILE=`mktemp /tmp/${PNAME}.XXXXXX` || exit 1
