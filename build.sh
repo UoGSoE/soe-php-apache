@@ -18,7 +18,7 @@ do
         exit 1
     fi
     echo "Building ${VERSION}..."
-    docker build -t "${BASE_NAME}":"${VERSION}" -f "${FILENAME}" . >> "${LOGFILE}"
+    docker build --pull --no-cache -t "${BASE_NAME}":"${VERSION}" -f "${FILENAME}" . >> "${LOGFILE}"
     echo "Pushing ${VERSION}..."
     docker push "${BASE_NAME}":"${VERSION}" >> "${LOGFILE}"
 done
